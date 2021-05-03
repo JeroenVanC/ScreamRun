@@ -1,6 +1,0 @@
-
-State Machine - |ScreamRun|main:main|character:char|up
-Name up.00 up.10 up.01 
-up.00 0 0 0 
-up.01 1 0 1 
-up.10 1 1 0 

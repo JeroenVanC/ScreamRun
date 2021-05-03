@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Mon May 03 10:26:50 2021
+Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
+Revision Name : ScreamRun
+Top-level Entity Name : ScreamRun
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 156
+Total pins : 107
+Total virtual pins : 0
+Total block memory bits : 172,032
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1
+Total DLLs : 0
