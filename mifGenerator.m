@@ -3,7 +3,7 @@ clear all;
 clc;
 
 %read the image
-I = imread('test.png');	
+I = imread('ScreamRun_Run.png');	
 imshow(I);
 [m,n] = size( I ); %size od your picture
 
@@ -20,27 +20,27 @@ G = double(G);
 B = double(B);
 
 %Raise each member of the component by appropriate value. 
-R = R.^(4/8); % 8 bits -> 4 bits
-G = G.^(4/8); % 8 bits -> 4 bits
-B = B.^(4/4); % 8 bits -> 4 bits
+R0 = R.^(4/8); % 8 bits -> 4 bits
+G0 = G.^(4/8); % 8 bits -> 4 bits
+B0 = B.^(4/8); % 8 bits -> 4 bits
 
 %tranlate to integer
-R = uint8(R); % float -> uint8
-G = uint8(G);
-B = uint8(B);
+R1 = uint16(R0); % float -> uint8
+G1 = uint16(G0);
+B1 = uint16(B0);
 
 %minus one cause sometimes conversion to integers rounds up the numbers wrongly
-R = R-1; % 3 bits -> max value is 111 (bin) -> 7 (dec)(hex)
-G = G-1;
-B = B-1; % 11 (bin) -> 3 (dec)(hex)
+R2 = R1-1; % 3 bits -> max value is 111 (bin) -> 7 (dec)(hex)
+G2 = G1-1;
+B2 = B1-1; % 11 (bin) -> 3 (dec)(hex)
 
 %shift bits and construct one Byte from 3 + 3 + 2 bits
-G = bitshift(G, 4); % 3 << G (shift by 3 bits)
-B = bitshift(B, 8); % 6 << B (shift by 6 bits)
-COLOR = R+G+B;      % R + 3 << G + 6 << B
+G3 = bitshift(G2, 4); % 3 << G (shift by 3 bits)
+B3 = bitshift(B2, 8); % 6 << B (shift by 6 bits)
+COLOR = R2+G3+B3;      % R + 3 << G + 6 << B
 
 %save variable COLOR to a file in HEX format for the chip to read
-fid = fopen ('test4.mif', 'w');
+fid = fopen ('ScreamRun_Run.mif', 'w');
 
 %fprintf (fileID, '%x', COLOR(size(COLOR(:), 1))); % COLOR (dec) -> print to file (hex)
     fprintf(fid, 'DEPTH=%d;\n', N);

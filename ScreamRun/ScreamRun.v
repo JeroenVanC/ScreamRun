@@ -72,6 +72,6 @@ module ScreamRun(
 //  Structural coding
 //=======================================================
 
-main main(.CLOCK_50(MAX10_CLK2_50), .KEY(KEY), .SW(SW), .VGA_R(VGA_R), .VGA_G(VGA_G), .VGA_B(VGA_B), .VGA_HS(VGA_HS), .VGA_VS(VGA_VS));
+main main(.CLOCK_50(MAX10_CLK2_50), .KEY(KEY), .SW(SW), .VGA_R(VGA_R), .VGA_G(VGA_G), .VGA_B(VGA_B), .VGA_HS(VGA_HS), .VGA_VS(VGA_VS), .LEDR(LEDR));
 
 endmodule

@@ -1,0 +1,8 @@
+
+
+
+
+
+
+
+characterRam characterRam ({imagex[6:2],imagey[6:2]},clock,12'b0,1'b0,mem_out);
