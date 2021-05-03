@@ -3,7 +3,7 @@ clear all;
 clc;
 
 %read the image
-I = imread('ScreamRun_Run.png');	
+I = imread('BackgroundScreamRun.png');	
 imshow(I);
 [m,n] = size( I ); %size od your picture
 
@@ -40,7 +40,7 @@ B3 = bitshift(B2, 8); % 6 << B (shift by 6 bits)
 COLOR = R2+G3+B3;      % R + 3 << G + 6 << B
 
 %save variable COLOR to a file in HEX format for the chip to read
-fid = fopen ('ScreamRun_Run.mif', 'w');
+fid = fopen ('BackgroundScreamRun.mif', 'w');
 
 %fprintf (fileID, '%x', COLOR(size(COLOR(:), 1))); % COLOR (dec) -> print to file (hex)
     fprintf(fid, 'DEPTH=%d;\n', N);
