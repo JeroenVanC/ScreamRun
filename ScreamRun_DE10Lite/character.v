@@ -54,7 +54,7 @@ always @(posedge clock or posedge reset) begin
 		
 		if (visible) begin
 			if (jump_key == 1 && jump == 0) begin jump = 1; end
-			char_base_y = 496 - speedoffset;
+			char_base_y = 690 - speedoffset;
 			imagex = display_col - 220;
 			imagey = display_row - char_base_y;
 			if (230 < display_col[11:0] && display_col[11:0] < 349 && (char_base_y+4) < display_row[10:0] && display_row[10:0] < (char_base_y+132)) begin

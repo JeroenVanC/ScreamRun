@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ScreamRun
-Wed Apr 28 12:14:12 2021
+Mon May 03 12:08:14 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -22,17 +22,20 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
  15. Source assignments for main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component|altsyncram_jnh1:auto_generated
  16. Source assignments for main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component|altsyncram_vqh1:auto_generated
- 17. Parameter Settings for User Entity Instance: main:main|PLL108MHz:u1|altpll:altpll_component
- 18. Parameter Settings for User Entity Instance: main:main|vga_controller:vga
- 19. Parameter Settings for User Entity Instance: main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component
- 20. Parameter Settings for User Entity Instance: main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component
- 21. altpll Parameter Settings by Entity Instance
- 22. altsyncram Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "main:main|character:char|ScreamRun_Jump:ScreamRun_Jump"
- 24. Port Connectivity Checks: "main:main|character:char|ScreamRun_Run:ScreamRun_Run"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+ 17. Source assignments for main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated
+ 18. Parameter Settings for User Entity Instance: main:main|PLL108MHz:u1|altpll:altpll_component
+ 19. Parameter Settings for User Entity Instance: main:main|vga_controller:vga
+ 20. Parameter Settings for User Entity Instance: main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component
+ 21. Parameter Settings for User Entity Instance: main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: main:main|Background:Background|altsyncram:altsyncram_component
+ 23. altpll Parameter Settings by Entity Instance
+ 24. altsyncram Parameter Settings by Entity Instance
+ 25. Port Connectivity Checks: "main:main|Background:Background"
+ 26. Port Connectivity Checks: "main:main|character:char|ScreamRun_Jump:ScreamRun_Jump"
+ 27. Port Connectivity Checks: "main:main|character:char|ScreamRun_Run:ScreamRun_Run"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -59,18 +62,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Apr 28 12:14:12 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 03 12:08:14 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ScreamRun                                   ;
 ; Top-level Entity Name              ; ScreamRun                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 447                                         ;
-;     Total combinational functions  ; 434                                         ;
-;     Dedicated logic registers      ; 144                                         ;
-; Total registers                    ; 144                                         ;
+; Total logic elements               ; 542                                         ;
+;     Total combinational functions  ; 526                                         ;
+;     Dedicated logic registers      ; 160                                         ;
+; Total registers                    ; 160                                         ;
 ; Total pins                         ; 149                                         ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 172,032                                     ;
+; Total memory bits                  ; 958,464                                     ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 1                                           ;
 ; UFM blocks                         ; 0                                           ;
@@ -181,37 +184,43 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                       ; Library ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File                  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v                 ;         ;
-; PLL108MHz.v                      ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/PLL108MHz.v            ;         ;
-; vga_controller.v                 ; yes             ; User Verilog HDL File                  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/vga_controller.v       ;         ;
-; character.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/character.v            ;         ;
-; ScreamRun_Run.v                  ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/ScreamRun_Run.v        ;         ;
-; ScreamRun_Jump.v                 ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/ScreamRun_Jump.v       ;         ;
-; screamrun.v                      ; yes             ; Auto-Found Verilog HDL File            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v            ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                                  ;         ;
-; aglobal201.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                              ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                             ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                           ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                           ;         ;
-; db/pll108mhz_altpll.v            ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/pll108mhz_altpll.v  ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                              ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                 ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                              ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                               ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                  ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                  ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
-; db/altsyncram_jnh1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_jnh1.tdf ;         ;
-; screamrun_run.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun_run.mif      ;         ;
-; db/altsyncram_vqh1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_vqh1.tdf ;         ;
-; screamrun_jump.mif               ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun_jump.mif     ;         ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File                  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v                  ;         ;
+; PLL108MHz.v                      ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/PLL108MHz.v             ;         ;
+; vga_controller.v                 ; yes             ; User Verilog HDL File                  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/vga_controller.v        ;         ;
+; character.v                      ; yes             ; User Verilog HDL File                  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/character.v             ;         ;
+; ScreamRun_Run.v                  ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/ScreamRun_Run.v         ;         ;
+; ScreamRun_Jump.v                 ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/ScreamRun_Jump.v        ;         ;
+; Background.v                     ; yes             ; User Wizard-Generated File             ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/Background.v            ;         ;
+; screamrun.v                      ; yes             ; Auto-Found Verilog HDL File            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v             ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf                                   ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                               ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_pll.inc                              ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratixii_pll.inc                            ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/cycloneii_pll.inc                            ;         ;
+; db/pll108mhz_altpll.v            ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/pll108mhz_altpll.v   ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                               ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                        ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                                  ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                               ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                                   ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                                   ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                                 ;         ;
+; db/altsyncram_jnh1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_jnh1.tdf  ;         ;
+; screamrun_run.mif                ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun_run.mif       ;         ;
+; db/altsyncram_vqh1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_vqh1.tdf  ;         ;
+; screamrun_jump.mif               ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun_jump.mif      ;         ;
+; db/altsyncram_sci1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_sci1.tdf  ;         ;
+; backgroundscreamrun.mif          ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/backgroundscreamrun.mif ;         ;
+; db/decode_h7a.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/decode_h7a.tdf       ;         ;
+; db/decode_aj9.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/decode_aj9.tdf       ;         ;
+; db/mux_c3b.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/mux_c3b.tdf          ;         ;
++----------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,24 +228,24 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                           ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 447                                                                                             ;
+; Estimated Total logic elements              ; 542                                                                                             ;
 ;                                             ;                                                                                                 ;
-; Total combinational functions               ; 434                                                                                             ;
+; Total combinational functions               ; 526                                                                                             ;
 ; Logic element usage by number of LUT inputs ;                                                                                                 ;
-;     -- 4 input functions                    ; 211                                                                                             ;
-;     -- 3 input functions                    ; 68                                                                                              ;
-;     -- <=2 input functions                  ; 155                                                                                             ;
+;     -- 4 input functions                    ; 254                                                                                             ;
+;     -- 3 input functions                    ; 112                                                                                             ;
+;     -- <=2 input functions                  ; 160                                                                                             ;
 ;                                             ;                                                                                                 ;
 ; Logic elements by mode                      ;                                                                                                 ;
-;     -- normal mode                          ; 297                                                                                             ;
-;     -- arithmetic mode                      ; 137                                                                                             ;
+;     -- normal mode                          ; 374                                                                                             ;
+;     -- arithmetic mode                      ; 152                                                                                             ;
 ;                                             ;                                                                                                 ;
-; Total registers                             ; 144                                                                                             ;
-;     -- Dedicated logic registers            ; 144                                                                                             ;
+; Total registers                             ; 160                                                                                             ;
+;     -- Dedicated logic registers            ; 160                                                                                             ;
 ;     -- I/O registers                        ; 0                                                                                               ;
 ;                                             ;                                                                                                 ;
 ; I/O pins                                    ; 149                                                                                             ;
-; Total memory bits                           ; 172032                                                                                          ;
+; Total memory bits                           ; 958464                                                                                          ;
 ;                                             ;                                                                                                 ;
 ; Embedded Multiplier 9-bit elements          ; 0                                                                                               ;
 ;                                             ;                                                                                                 ;
@@ -244,9 +253,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                               ;
 ;                                             ;                                                                                                 ;
 ; Maximum fan-out node                        ; main:main|PLL108MHz:u1|altpll:altpll_component|PLL108MHz_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 169                                                                                             ;
-; Total fan-out                               ; 2403                                                                                            ;
-; Average fan-out                             ; 2.57                                                                                            ;
+; Maximum fan-out                             ; 281                                                                                             ;
+; Total fan-out                               ; 4305                                                                                            ;
+; Average fan-out                             ; 3.78                                                                                            ;
 +---------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
@@ -255,31 +264,37 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                              ; Entity Name      ; Library Name ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |ScreamRun                                      ; 434 (1)             ; 144 (0)                   ; 172032      ; 0          ; 0            ; 0       ; 0         ; 149  ; 0            ; 0          ; |ScreamRun                                                                                                                       ; ScreamRun        ; work         ;
-;    |main:main|                                  ; 433 (12)            ; 144 (12)                  ; 172032      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main                                                                                                             ; main             ; work         ;
+; |ScreamRun                                      ; 526 (1)             ; 160 (0)                   ; 958464      ; 0          ; 0            ; 0       ; 0         ; 149  ; 0            ; 0          ; |ScreamRun                                                                                                                       ; ScreamRun        ; work         ;
+;    |main:main|                                  ; 525 (45)            ; 160 (22)                  ; 958464      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main                                                                                                             ; main             ; work         ;
+;       |Background:Background|                   ; 56 (0)              ; 6 (0)                     ; 786432      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|Background:Background                                                                                       ; Background       ; work         ;
+;          |altsyncram:altsyncram_component|      ; 56 (0)              ; 6 (0)                     ; 786432      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|Background:Background|altsyncram:altsyncram_component                                                       ; altsyncram       ; work         ;
+;             |altsyncram_sci1:auto_generated|    ; 56 (0)              ; 6 (6)                     ; 786432      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated                        ; altsyncram_sci1  ; work         ;
+;                |decode_aj9:rden_decode|         ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated|decode_aj9:rden_decode ; decode_aj9       ; work         ;
+;                |mux_c3b:mux2|                   ; 48 (48)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated|mux_c3b:mux2           ; mux_c3b          ; work         ;
 ;       |PLL108MHz:u1|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|PLL108MHz:u1                                                                                                ; PLL108MHz        ; work         ;
 ;          |altpll:altpll_component|              ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|PLL108MHz:u1|altpll:altpll_component                                                                        ; altpll           ; work         ;
 ;             |PLL108MHz_altpll:auto_generated|   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|PLL108MHz:u1|altpll:altpll_component|PLL108MHz_altpll:auto_generated                                        ; PLL108MHz_altpll ; work         ;
-;       |character:char|                          ; 370 (370)           ; 106 (106)                 ; 172032      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char                                                                                              ; character        ; work         ;
+;       |character:char|                          ; 371 (371)           ; 106 (106)                 ; 172032      ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char                                                                                              ; character        ; work         ;
 ;          |ScreamRun_Jump:ScreamRun_Jump|        ; 0 (0)               ; 0 (0)                     ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char|ScreamRun_Jump:ScreamRun_Jump                                                                ; ScreamRun_Jump   ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component                                ; altsyncram       ; work         ;
 ;                |altsyncram_vqh1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 98304       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component|altsyncram_vqh1:auto_generated ; altsyncram_vqh1  ; work         ;
 ;          |ScreamRun_Run:ScreamRun_Run|          ; 0 (0)               ; 0 (0)                     ; 73728       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char|ScreamRun_Run:ScreamRun_Run                                                                  ; ScreamRun_Run    ; work         ;
 ;             |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 73728       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component                                  ; altsyncram       ; work         ;
 ;                |altsyncram_jnh1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 73728       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component|altsyncram_jnh1:auto_generated   ; altsyncram_jnh1  ; work         ;
-;       |vga_controller:vga|                      ; 51 (51)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|vga_controller:vga                                                                                          ; vga_controller   ; work         ;
+;       |vga_controller:vga|                      ; 53 (53)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |ScreamRun|main:main|vga_controller:vga                                                                                          ; vga_controller   ; work         ;
 +-------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                               ;
-+----------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------+
-; Name                                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                ;
-+----------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------+
-; main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component|altsyncram_vqh1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 8192         ; 12           ; --           ; --           ; 98304 ; ScreamRun_Jump.mif ;
-; main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component|altsyncram_jnh1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 6144         ; 12           ; --           ; --           ; 73728 ; ScreamRun_Run.mif  ;
-+----------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+-------+--------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                     ;
++----------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------------------+
+; Name                                                                                                                             ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF                     ;
++----------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------------------+
+; main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated|ALTSYNCRAM                        ; AUTO ; Single Port ; 65536        ; 12           ; --           ; --           ; 786432 ; BackgroundScreamRun.mif ;
+; main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component|altsyncram_vqh1:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 8192         ; 12           ; --           ; --           ; 98304  ; ScreamRun_Jump.mif      ;
+; main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component|altsyncram_jnh1:auto_generated|ALTSYNCRAM   ; AUTO ; Single Port ; 6144         ; 12           ; --           ; --           ; 73728  ; ScreamRun_Run.mif       ;
++----------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+--------+-------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -287,6 +302,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------+------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                                   ; IP Include File  ;
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------+------------------+
+; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |ScreamRun|main:main|Background:Background                        ; Background.v     ;
 ; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |ScreamRun|main:main|character:char|ScreamRun_Jump:ScreamRun_Jump ; ScreamRun_Jump.v ;
 ; Altera ; RAM: 1-PORT  ; 20.1    ; N/A          ; N/A          ; |ScreamRun|main:main|character:char|ScreamRun_Run:ScreamRun_Run   ; ScreamRun_Run.v  ;
 ; Altera ; ALTPLL       ; 20.1    ; N/A          ; N/A          ; |ScreamRun|main:main|PLL108MHz:u1                                 ; PLL108MHz.v      ;
@@ -321,7 +337,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; main:main|character:char|char_address_Run[7] ; Merged with main:main|character:char|char_address_Jump[7] ;
 ; main:main|character:char|char_address_Run[8] ; Merged with main:main|character:char|char_address_Jump[8] ;
 ; main:main|character:char|char_address_Run[9] ; Merged with main:main|character:char|char_address_Jump[9] ;
-; Total Number of Removed Registers = 10       ;                                                           ;
+; main:main|count[10..31]                      ; Lost fanout                                               ;
+; Total Number of Removed Registers = 32       ;                                                           ;
 +----------------------------------------------+-----------------------------------------------------------+
 
 
@@ -330,12 +347,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 144   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 160   ;
+; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 126   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 84    ;
+; Number of registers using Clock Enable       ; 93    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -356,7 +373,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |ScreamRun|main:main|red[3]                 ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |ScreamRun|main:main|red[3]                 ;
 ; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |ScreamRun|main:main|character:char|blue[3] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------+
 
@@ -377,6 +394,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------+--------------------+------+--------------------------------------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                                              ;
 +---------------------------------+--------------------+------+--------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------+
@@ -892,6 +918,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: main:main|Background:Background|altsyncram:altsyncram_component ;
++------------------------------------+-------------------------+-----------------------------------------------+
+; Parameter Name                     ; Value                   ; Type                                          ;
++------------------------------------+-------------------------+-----------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                       ; Untyped                                       ;
+; AUTO_CARRY_CHAINS                  ; ON                      ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS               ; OFF                     ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS                ; ON                      ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                     ; IGNORE_CASCADE                                ;
+; WIDTH_BYTEENA                      ; 1                       ; Untyped                                       ;
+; OPERATION_MODE                     ; SINGLE_PORT             ; Untyped                                       ;
+; WIDTH_A                            ; 12                      ; Signed Integer                                ;
+; WIDTHAD_A                          ; 16                      ; Signed Integer                                ;
+; NUMWORDS_A                         ; 65536                   ; Signed Integer                                ;
+; OUTDATA_REG_A                      ; CLOCK0                  ; Untyped                                       ;
+; ADDRESS_ACLR_A                     ; NONE                    ; Untyped                                       ;
+; OUTDATA_ACLR_A                     ; NONE                    ; Untyped                                       ;
+; WRCONTROL_ACLR_A                   ; NONE                    ; Untyped                                       ;
+; INDATA_ACLR_A                      ; NONE                    ; Untyped                                       ;
+; BYTEENA_ACLR_A                     ; NONE                    ; Untyped                                       ;
+; WIDTH_B                            ; 1                       ; Untyped                                       ;
+; WIDTHAD_B                          ; 1                       ; Untyped                                       ;
+; NUMWORDS_B                         ; 1                       ; Untyped                                       ;
+; INDATA_REG_B                       ; CLOCK1                  ; Untyped                                       ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                  ; Untyped                                       ;
+; RDCONTROL_REG_B                    ; CLOCK1                  ; Untyped                                       ;
+; ADDRESS_REG_B                      ; CLOCK1                  ; Untyped                                       ;
+; OUTDATA_REG_B                      ; UNREGISTERED            ; Untyped                                       ;
+; BYTEENA_REG_B                      ; CLOCK1                  ; Untyped                                       ;
+; INDATA_ACLR_B                      ; NONE                    ; Untyped                                       ;
+; WRCONTROL_ACLR_B                   ; NONE                    ; Untyped                                       ;
+; ADDRESS_ACLR_B                     ; NONE                    ; Untyped                                       ;
+; OUTDATA_ACLR_B                     ; NONE                    ; Untyped                                       ;
+; RDCONTROL_ACLR_B                   ; NONE                    ; Untyped                                       ;
+; BYTEENA_ACLR_B                     ; NONE                    ; Untyped                                       ;
+; WIDTH_BYTEENA_A                    ; 1                       ; Signed Integer                                ;
+; WIDTH_BYTEENA_B                    ; 1                       ; Untyped                                       ;
+; RAM_BLOCK_TYPE                     ; AUTO                    ; Untyped                                       ;
+; BYTE_SIZE                          ; 8                       ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE               ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ    ; Untyped                                       ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ    ; Untyped                                       ;
+; INIT_FILE                          ; BackgroundScreamRun.mif ; Untyped                                       ;
+; INIT_FILE_LAYOUT                   ; PORT_A                  ; Untyped                                       ;
+; MAXIMUM_DEPTH                      ; 0                       ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                  ; Untyped                                       ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                  ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                  ; Untyped                                       ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                  ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN         ; Untyped                                       ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN         ; Untyped                                       ;
+; ENABLE_ECC                         ; FALSE                   ; Untyped                                       ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                   ; Untyped                                       ;
+; WIDTH_ECCSTATUS                    ; 3                       ; Untyped                                       ;
+; DEVICE_FAMILY                      ; MAX 10                  ; Untyped                                       ;
+; CBXI_PARAMETER                     ; altsyncram_sci1         ; Untyped                                       ;
++------------------------------------+-------------------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------+
 ; altpll Parameter Settings by Entity Instance                                   ;
 +-------------------------------+------------------------------------------------+
@@ -914,7 +1001,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------------------------------------------+
 ; Name                                      ; Value                                                                                  ;
 +-------------------------------------------+----------------------------------------------------------------------------------------+
-; Number of entity instances                ; 2                                                                                      ;
+; Number of entity instances                ; 3                                                                                      ;
 ; Entity Instance                           ; main:main|character:char|ScreamRun_Run:ScreamRun_Run|altsyncram:altsyncram_component   ;
 ;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                            ;
 ;     -- WIDTH_A                            ; 12                                                                                     ;
@@ -937,7 +1024,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                           ;
 ;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                   ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                              ;
+; Entity Instance                           ; main:main|Background:Background|altsyncram:altsyncram_component                        ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                                                            ;
+;     -- WIDTH_A                            ; 12                                                                                     ;
+;     -- NUMWORDS_A                         ; 65536                                                                                  ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                 ;
+;     -- WIDTH_B                            ; 1                                                                                      ;
+;     -- NUMWORDS_B                         ; 1                                                                                      ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                                                 ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                                                           ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                                   ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                                              ;
 +-------------------------------------------+----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "main:main|Background:Background" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; data ; Input ; Info     ; Stuck at GND                      ;
+; wren ; Input ; Info     ; Stuck at GND                      ;
++------+-------+----------+-----------------------------------+
 
 
 +------------------------------------------------------------------------------------+
@@ -966,27 +1074,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 149                         ;
-; cycloneiii_ff         ; 144                         ;
-;     CLR               ; 59                          ;
-;     ENA               ; 17                          ;
+; cycloneiii_ff         ; 160                         ;
+;     CLR               ; 47                          ;
+;     CLR SCLR          ; 12                          ;
+;     ENA               ; 26                          ;
 ;     ENA CLR           ; 67                          ;
-;     plain             ; 1                           ;
+;     plain             ; 8                           ;
 ; cycloneiii_io_obuf    ; 35                          ;
-; cycloneiii_lcell_comb ; 435                         ;
-;     arith             ; 137                         ;
-;         2 data inputs ; 110                         ;
-;         3 data inputs ; 27                          ;
-;     normal            ; 298                         ;
+; cycloneiii_lcell_comb ; 527                         ;
+;     arith             ; 152                         ;
+;         2 data inputs ; 115                         ;
+;         3 data inputs ; 37                          ;
+;     normal            ; 375                         ;
 ;         0 data inputs ; 4                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 34                          ;
-;         3 data inputs ; 41                          ;
-;         4 data inputs ; 211                         ;
+;         1 data inputs ; 9                           ;
+;         2 data inputs ; 33                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 254                         ;
 ; cycloneiii_pll        ; 1                           ;
-; cycloneiii_ram_block  ; 24                          ;
+; cycloneiii_ram_block  ; 120                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 14.50                       ;
-; Average LUT depth     ; 7.47                        ;
+; Max LUT depth         ; 15.40                       ;
+; Average LUT depth     ; 6.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -995,7 +1104,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -1005,7 +1114,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Apr 28 12:13:51 2021
+    Info: Processing started: Mon May 03 12:07:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ScreamRun -c ScreamRun
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1015,15 +1124,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file pll108m
     Info (12023): Found entity 1: PLL108MHz File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/PLL108MHz.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
     Info (12023): Found entity 1: vga_controller File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/vga_controller.v Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file characterram.v
-    Info (12023): Found entity 1: characterRam File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/characterRam.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file character.v
     Info (12023): Found entity 1: character File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/character.v Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file screamrun_run.v
     Info (12023): Found entity 1: ScreamRun_Run File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/ScreamRun_Run.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file screamrun_jump.v
     Info (12023): Found entity 1: ScreamRun_Jump File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/ScreamRun_Jump.v Line: 40
-Warning (10236): Verilog HDL Implicit Net warning at main.v(21): created implicit net for "jump_key" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file background.v
+    Info (12023): Found entity 1: Background File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/Background.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at main.v(22): created implicit net for "jump_key" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 22
 Warning (12125): Using design file screamrun.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: ScreamRun File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 6
 Info (12127): Elaborating entity "ScreamRun" for the top level hierarchy
@@ -1046,8 +1155,9 @@ Warning (10034): Output port "DRAM_WE_N" at screamrun.v(24) has no driver File: 
 Warning (10034): Output port "GSENSOR_CS_N" at screamrun.v(51) has no driver File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 51
 Warning (10034): Output port "GSENSOR_SCLK" at screamrun.v(53) has no driver File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 53
 Info (12128): Elaborating entity "main" for hierarchy "main:main" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 75
+Warning (10230): Verilog HDL assignment warning at main.v(49): truncated value with size 32 to match size of target (12) File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 49
 Warning (10034): Output port "LEDR[9..1]" at main.v(7) has no driver File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 7
-Info (12128): Elaborating entity "PLL108MHz" for hierarchy "main:main|PLL108MHz:u1" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 24
+Info (12128): Elaborating entity "PLL108MHz" for hierarchy "main:main|PLL108MHz:u1" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 25
 Info (12128): Elaborating entity "altpll" for hierarchy "main:main|PLL108MHz:u1|altpll:altpll_component" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/PLL108MHz.v Line: 100
 Info (12130): Elaborated megafunction instantiation "main:main|PLL108MHz:u1|altpll:altpll_component" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/PLL108MHz.v Line: 100
 Info (12133): Instantiated megafunction "main:main|PLL108MHz:u1|altpll:altpll_component" with the following parameter: File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/PLL108MHz.v Line: 100
@@ -1108,10 +1218,10 @@ Info (12133): Instantiated megafunction "main:main|PLL108MHz:u1|altpll:altpll_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll108mhz_altpll.v
     Info (12023): Found entity 1: PLL108MHz_altpll File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/pll108mhz_altpll.v Line: 30
 Info (12128): Elaborating entity "PLL108MHz_altpll" for hierarchy "main:main|PLL108MHz:u1|altpll:altpll_component|PLL108MHz_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "vga_controller" for hierarchy "main:main|vga_controller:vga" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 39
+Info (12128): Elaborating entity "vga_controller" for hierarchy "main:main|vga_controller:vga" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 40
 Warning (10230): Verilog HDL assignment warning at vga_controller.v(33): truncated value with size 32 to match size of target (12) File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/vga_controller.v Line: 33
 Warning (10230): Verilog HDL assignment warning at vga_controller.v(43): truncated value with size 32 to match size of target (11) File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/vga_controller.v Line: 43
-Info (12128): Elaborating entity "character" for hierarchy "main:main|character:char" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 44
+Info (12128): Elaborating entity "character" for hierarchy "main:main|character:char" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 45
 Warning (10230): Verilog HDL assignment warning at character.v(34): truncated value with size 32 to match size of target (4) File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/character.v Line: 34
 Warning (10230): Verilog HDL assignment warning at character.v(39): truncated value with size 32 to match size of target (31) File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/character.v Line: 39
 Warning (10230): Verilog HDL assignment warning at character.v(48): truncated value with size 32 to match size of target (13) File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/character.v Line: 48
@@ -1167,6 +1277,37 @@ Info (12133): Instantiated megafunction "main:main|character:char|ScreamRun_Jump
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_vqh1.tdf
     Info (12023): Found entity 1: altsyncram_vqh1 File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_vqh1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_vqh1" for hierarchy "main:main|character:char|ScreamRun_Jump:ScreamRun_Jump|altsyncram:altsyncram_component|altsyncram_vqh1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "Background" for hierarchy "main:main|Background:Background" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/main.v Line: 56
+Info (12128): Elaborating entity "altsyncram" for hierarchy "main:main|Background:Background|altsyncram:altsyncram_component" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/Background.v Line: 86
+Info (12130): Elaborated megafunction instantiation "main:main|Background:Background|altsyncram:altsyncram_component" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/Background.v Line: 86
+Info (12133): Instantiated megafunction "main:main|Background:Background|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/Background.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "BackgroundScreamRun.mif"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "65536"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "16"
+    Info (12134): Parameter "width_a" = "12"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_sci1.tdf
+    Info (12023): Found entity 1: altsyncram_sci1 File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_sci1.tdf Line: 34
+Info (12128): Elaborating entity "altsyncram_sci1" for hierarchy "main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_h7a.tdf
+    Info (12023): Found entity 1: decode_h7a File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/decode_h7a.tdf Line: 23
+Info (12128): Elaborating entity "decode_h7a" for hierarchy "main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated|decode_h7a:decode3" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_sci1.tdf Line: 45
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_aj9.tdf
+    Info (12023): Found entity 1: decode_aj9 File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/decode_aj9.tdf Line: 23
+Info (12128): Elaborating entity "decode_aj9" for hierarchy "main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated|decode_aj9:rden_decode" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_sci1.tdf Line: 46
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_c3b.tdf
+    Info (12023): Found entity 1: mux_c3b File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/mux_c3b.tdf Line: 23
+Info (12128): Elaborating entity "mux_c3b" for hierarchy "main:main|Background:Background|altsyncram:altsyncram_component|altsyncram_sci1:auto_generated|mux_c3b:mux2" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/db/altsyncram_sci1.tdf Line: 47
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "DRAM_DQ[0]" has no driver File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 20
     Warning (13040): bidirectional pin "DRAM_DQ[1]" has no driver File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 20
@@ -1295,6 +1436,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GSENSOR_CS_N" is stuck at GND File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 51
     Warning (13410): Pin "GSENSOR_SCLK" is stuck at GND File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 53
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 22 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 14 input pin(s) that do not drive logic
@@ -1312,17 +1454,17 @@ Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 41
     Warning (15610): No output dependent on input pin "GSENSOR_INT[1]" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 52
     Warning (15610): No output dependent on input pin "GSENSOR_INT[2]" File: C:/Users/jonas/OneDrive/Documenten/School/2020-2021/SOCOE/Quartus/ScreamRun/screamrun.v Line: 52
-Info (21057): Implemented 652 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 846 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 17 input pins
     Info (21059): Implemented 97 output pins
     Info (21060): Implemented 35 bidirectional pins
-    Info (21061): Implemented 478 logic cells
-    Info (21064): Implemented 24 RAM segments
+    Info (21061): Implemented 576 logic cells
+    Info (21064): Implemented 120 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 172 warnings
-    Info: Peak virtual memory: 4752 megabytes
-    Info: Processing ended: Wed Apr 28 12:14:12 2021
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:41
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 173 warnings
+    Info: Peak virtual memory: 4772 megabytes
+    Info: Processing ended: Mon May 03 12:08:14 2021
+    Info: Elapsed time: 00:00:53
+    Info: Total CPU time (on all processors): 00:00:56
 
 
