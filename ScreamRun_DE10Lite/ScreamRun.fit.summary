@@ -1,17 +1,17 @@
-Fitter Status : Successful - Mon May 03 12:09:19 2021
+Fitter Status : Successful - Fri May 07 09:17:01 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : ScreamRun
 Top-level Entity Name : ScreamRun
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 540 / 49,760 ( 1 % )
-    Total combinational functions : 526 / 49,760 ( 1 % )
-    Dedicated logic registers : 160 / 49,760 ( < 1 % )
-Total registers : 160
+Total logic elements : 795 / 49,760 ( 2 % )
+    Total combinational functions : 771 / 49,760 ( 2 % )
+    Dedicated logic registers : 260 / 49,760 ( < 1 % )
+Total registers : 260
 Total pins : 149 / 360 ( 41 % )
 Total virtual pins : 0
-Total memory bits : 958,464 / 1,677,312 ( 57 % )
+Total memory bits : 1,032,192 / 1,677,312 ( 62 % )
 Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
 Total PLLs : 1 / 4 ( 25 % )
 UFM blocks : 0 / 1 ( 0 % )

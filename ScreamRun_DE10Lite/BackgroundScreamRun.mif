@@ -3,7 +3,7 @@ WIDTH=12;
 ADDRESS_RADIX = HEX;
 DATA_RADIX = HEX;
 CONTENT	BEGIN
-	1	:	ba9;
+	1	:	cba;
 	2	:	cba;
 	3	:	cba;
 	4	:	cba;
@@ -65283,7 +65283,7 @@ CONTENT	BEGIN
 	FEFE	:	544;
 	FEFF	:	544;
 	FF00	:	544;
-	FF01	:	ba9;
+	FF01	:	cba;
 	FF02	:	cba;
 	FF03	:	cba;
 	FF04	:	cba;

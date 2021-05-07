@@ -73,7 +73,7 @@ always @(posedge clock or posedge reset) begin
 						visible_char = 1;
 					end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
 				end
-			end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; end
+			end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
 		end
 	end
 end

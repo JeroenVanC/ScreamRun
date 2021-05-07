@@ -1,5 +1,5 @@
 Flow report for ScreamRun
-Mon May 03 12:09:48 2021
+Fri May 07 09:17:24 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon May 03 12:09:33 2021       ;
+; Flow Status                        ; Successful - Fri May 07 09:17:13 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; ScreamRun                                   ;
 ; Top-level Entity Name              ; ScreamRun                                   ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 540 / 49,760 ( 1 % )                        ;
-;     Total combinational functions  ; 526 / 49,760 ( 1 % )                        ;
-;     Dedicated logic registers      ; 160 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 160                                         ;
+; Total logic elements               ; 795 / 49,760 ( 2 % )                        ;
+;     Total combinational functions  ; 771 / 49,760 ( 2 % )                        ;
+;     Dedicated logic registers      ; 260 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 260                                         ;
 ; Total pins                         ; 149 / 360 ( 41 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 958,464 / 1,677,312 ( 57 % )                ;
+; Total memory bits                  ; 1,032,192 / 1,677,312 ( 62 % )              ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/03/2021 12:07:23 ;
+; Start date & time ; 05/07/2021 09:15:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ScreamRun           ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 36074248823853.162003644214688         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 10995770589186.162037174105172         ; --            ; --          ; --         ;
 ; MISC_FILE                           ; PLL108MHz_inst.v                       ; --            ; --          ; --         ;
 ; MISC_FILE                           ; PLL108MHz_bb.v                         ; --            ; --          ; --         ;
 ; MISC_FILE                           ; PLL108MHz.ppf                          ; --            ; --          ; --         ;
@@ -88,6 +88,8 @@ https://fpgasoftware.intel.com/eula.
 ; MISC_FILE                           ; ScreamRun_Jump_bb.v                    ; --            ; --          ; --         ;
 ; MISC_FILE                           ; Background_inst.v                      ; --            ; --          ; --         ;
 ; MISC_FILE                           ; Background_bb.v                        ; --            ; --          ; --         ;
+; MISC_FILE                           ; Encounter1_Run_inst.v                  ; --            ; --          ; --         ;
+; MISC_FILE                           ; Encounter1_Run_bb.v                    ; --            ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --            ; --          ; --         ;
 ; OUTPUT_IO_TIMING_NEAR_END_VMEAS     ; Half Vccio                             ; --            ; --          ; --         ;
@@ -103,11 +105,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:52     ; 1.0                     ; 4766 MB             ; 00:00:55                           ;
-; Fitter               ; 00:01:03     ; 1.1                     ; 5390 MB             ; 00:01:02                           ;
-; Assembler            ; 00:00:09     ; 1.0                     ; 4698 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:13     ; 1.3                     ; 4831 MB             ; 00:00:12                           ;
-; Total                ; 00:02:17     ; --                      ; --                  ; 00:02:16                           ;
+; Analysis & Synthesis ; 00:00:30     ; 1.0                     ; 4759 MB             ; 00:00:49                           ;
+; Fitter               ; 00:00:49     ; 1.1                     ; 5393 MB             ; 00:00:56                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4702 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.3                     ; 4830 MB             ; 00:00:11                           ;
+; Total                ; 00:01:36     ; --                      ; --                  ; 00:02:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

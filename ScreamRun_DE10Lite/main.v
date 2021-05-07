@@ -10,13 +10,14 @@ module main(CLOCK_50, KEY, SW,
  
  
  reg [3:0] red, green, blue;
- wire visible, hsync, vsync, reset, clock, char_visible;
+ wire visible, hsync, vsync, reset, clock, char_visible, enc1_visible;
  wire [11:0] display_col, symbol_col;
  wire [10:0] display_row;
  
  wire [3:0] char_red, char_green, char_blue;
+ wire [3:0] enc1_red, enc1_green, enc1_blue;
  
- wire [11:0] mem_out_back;
+ wire [11:0] mem_out_back, mem_out_back2;
  
  assign reset = !KEY[0];
  assign jump_key = !KEY[1];
@@ -44,6 +45,9 @@ vga_controller # ( 	.HOR_FIELD (1279),
 character char (.display_col(display_col), .display_row(display_row), .jump_key(jump_key), .reset(reset), .visible(visible), .clock(clock),
 					 .char_red(char_red), .char_green(char_green), .char_blue(char_blue), .char_visible(char_visible));
 					 
+encounter1 enc1 (.display_col(display_col), .display_row(display_row), .reset(reset), .visible(visible), .clock(clock),
+					 .enc1_red(enc1_red), .enc1_green(enc1_green), .enc1_blue(enc1_blue), .enc1_visible(enc1_visible));
+					 
 					 
 reg [31:0] count;
 assign symbol_col = display_col + count;
@@ -54,17 +58,22 @@ Background Background (
 	.data(12'b0),
 	.wren(1'b0),
 	.q(mem_out_back));
+	
 		
 always @(posedge clock or posedge reset) begin
 	if (reset) begin
 		red = 0; green = 0; blue = 0;
 	end else begin
-		if (display_col == 0 && display_row == 0) count = count + 1;
+		if (display_col == 0 && display_row == 0) count = count + 3;
 		if (visible) begin
-			if (char_visible) begin
+			if (char_visible == 1) begin
 				red = char_red;
 				green = char_green;
 				blue = char_blue;
+			end else if (enc1_visible == 1) begin
+				red = enc1_red;
+				green = enc1_green;
+				blue = enc1_blue;
 			end else begin 
 				red = mem_out_back[3:0];
 				green = mem_out_back[7:4];
