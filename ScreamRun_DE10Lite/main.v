@@ -10,12 +10,13 @@ module main(CLOCK_50, KEY, SW,
  
  
  reg [3:0] red, green, blue;
- wire visible, hsync, vsync, reset, clock, char_visible, enc1_visible;
+ wire visible, hsync, vsync, reset, clock, char_visible, enc1_visible, boss_visible;
  wire [11:0] display_col, symbol_col;
  wire [10:0] display_row;
  
  wire [3:0] char_red, char_green, char_blue;
  wire [3:0] enc1_red, enc1_green, enc1_blue;
+ wire [3:0] boss_red, boss_green, boss_blue;
  
  wire [11:0] mem_out_back, mem_out_back2;
  
@@ -48,6 +49,9 @@ character char (.display_col(display_col), .display_row(display_row), .jump_key(
 encounter1 enc1 (.display_col(display_col), .display_row(display_row), .reset(reset), .visible(visible), .clock(clock),
 					 .enc1_red(enc1_red), .enc1_green(enc1_green), .enc1_blue(enc1_blue), .enc1_visible(enc1_visible));
 					 
+finalBoss boss (.display_col(display_col), .display_row(display_row), .reset(reset), .visible(visible), .clock(clock),
+					 .boss_red(boss_red), .boss_green(boss_green), .boss_blue(boss_blue), .boss_visible(boss_visible));
+					 
 					 
 reg [31:0] count;
 assign symbol_col = display_col + count;
@@ -67,9 +71,13 @@ always @(posedge clock or posedge reset) begin
 		if (display_col == 0 && display_row == 0) count = count + 3;
 		if (visible) begin
 			if (char_visible == 1) begin
-				red = char_red;
+			    red = char_red;
 				green = char_green;
 				blue = char_blue;
+			end else if (boss_visible == 1) begin
+				red = boss_red;
+				green = boss_green;
+				blue = boss_blue;
 			end else if (enc1_visible == 1) begin
 				red = enc1_red;
 				green = enc1_green;

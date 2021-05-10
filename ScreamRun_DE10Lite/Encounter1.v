@@ -44,7 +44,7 @@ always @(posedge clock or posedge reset) begin
 			if (char_base_x == 0) begin
 				char_base_x = 1500;
 			end else begin
-				char_base_x = char_base_x - 4;
+				char_base_x = char_base_x - 6; //speed
 			end
 		end
 			

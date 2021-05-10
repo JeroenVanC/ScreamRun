@@ -21,22 +21,21 @@ module character (display_col, display_row, jump_key, reset, visible, clock, cha
  wire [11:0] mem_out_Run, mem_out_Jump;
 
 
-//characterRam characterRam ({imagex[6:2],imagey[6:2]},clock,12'b0,1'b0,mem_out);
 ScreamRun_Run ScreamRun_Run (char_address_Run,clock,12'b0,1'b0,mem_out_Run);
 ScreamRun_Jump ScreamRun_Jump (char_address_Jump,clock,12'b0,1'b0,mem_out_Jump);
 
 always @(posedge clock or posedge reset) begin
   if (reset) begin
-        counter <= 0; animatie_Run <= 0;
+        counter = 0; animatie_Run = 0;
   end else begin
         if (counter == 10000000) begin
-            counter <= 0;
-				animatie_Run <= animatie_Run + 1;
+            counter = 0;
+				animatie_Run = animatie_Run + 1;
             if (animatie_Run == 5) begin
-                animatie_Run <= 0;
+                animatie_Run = 0;
             end 
         end else begin
-            counter <= counter + 1;
+            counter = counter + 1;
         end
     end
 end
@@ -55,9 +54,9 @@ always @(posedge clock or posedge reset) begin
 		if (visible) begin
 			if (jump_key == 1 && jump == 0) begin jump = 1; end
 			char_base_y = 690 - speedoffset;
-			imagex = display_col - 220;
+			imagex = display_col - 300;
 			imagey = display_row - char_base_y;
-			if (230 < display_col[11:0] && display_col[11:0] < 349 && (char_base_y+4) < display_row[10:0] && display_row[10:0] < (char_base_y+132)) begin
+			if (310 < display_col[11:0] && display_col[11:0] < 429 && (char_base_y+4) < display_row[10:0] && display_row[10:0] < (char_base_y+132)) begin
 				if (jump) begin
 					if (mem_out_Jump != 12'b110000001111) begin
 						red = mem_out_Jump[3:0];
@@ -157,7 +156,7 @@ end
 			68: begin speedoffset = 0; animatie_Jump = 7; end
 			69: begin speedoffset = 0; animatie_Jump = 7; end
 			
-			default: speedoffset = 0;
+			default: begin speedoffset = 0; animatie_Jump = 1; end
 		endcase
 	end
 
