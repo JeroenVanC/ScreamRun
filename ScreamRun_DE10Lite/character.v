@@ -1,7 +1,7 @@
 
-module character (display_col, display_row, jump_key, reset, visible, clock, char_red, char_green, char_blue, char_visible);
+module character (display_col, display_row, jump_key, reset, visible, clock, hit, char_red, char_green, char_blue, char_visible);
 
- input jump_key, visible, clock, reset;
+ input jump_key, visible, clock, reset, hit;
  input [11:0] display_col;
  input [10:0] display_row;
  
@@ -28,16 +28,19 @@ always @(posedge clock or posedge reset) begin
   if (reset) begin
         counter = 0; animatie_Run = 0;
   end else begin
-        if (counter == 10000000) begin
-            counter = 0;
-				animatie_Run = animatie_Run + 1;
-            if (animatie_Run == 5) begin
-                animatie_Run = 0;
-            end 
-        end else begin
-            counter = counter + 1;
-        end
-    end
+		  if (hit == 1) begin 
+				animatie_Run = animatie_Run;
+				counter = counter;
+		  end else if(counter == 10000000) begin
+					counter = 0;
+					animatie_Run = animatie_Run + 1;
+					if (animatie_Run == 5) begin
+						animatie_Run = 0;
+					end 
+				end else begin
+					counter = counter + 1;
+				end
+			end
 end
 		
 always @(posedge clock or posedge reset) begin
@@ -47,12 +50,16 @@ always @(posedge clock or posedge reset) begin
 		char_address_Run = {imagex[6:2],imagey[6:2]} + animatie_Run*1024;
 		char_address_Jump = {imagex[6:2],imagey[6:2]} + animatie_Jump*1024;
 		if (display_col == 0 && display_row == 0 && jump == 1) begin 
+			if (hit == 1) begin
+				count = count;
+			end else begin
 				count = count + 1;
 				if (count == 69) begin jump = 0; count = 0; end	
+			end
 		end
 		
 		if (visible) begin
-			if (jump_key == 1 && jump == 0) begin jump = 1; end
+			if (jump_key == 1 && jump == 0 && hit == 0) begin jump = 1; end
 			char_base_y = 690 - speedoffset;
 			imagex = display_col - 300;
 			imagey = display_row - char_base_y;
@@ -73,7 +80,7 @@ always @(posedge clock or posedge reset) begin
 					end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
 				end
 			end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
-		end
+		end 
 	end
 end
 	

@@ -1,0 +1,22 @@
+module random_enc_gen (clock, reset, random_enc_gen_out)
+
+input clock, reset;
+output random_enc_gen_out;
+
+wire lfsr_out;
+reg [30:0] time_delay;
+
+lfsr lfsr(.clock(clock), .reset(reset), .out(lfsr_out));
+
+
+always @(posedge clock or posedge reset) begin
+	if (reset) begin
+		random_enc_gen_out = 0;
+	end else begin
+		if(lfsr_out) begin
+			time_delay = time_delay + 1;
+		end
+	end
+end
+
+endmodule

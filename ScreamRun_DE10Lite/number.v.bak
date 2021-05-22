@@ -1,0 +1,75 @@
+
+module number (display_col, display_row, reset, visible, clock, char_red, char_green, char_blue, char_visible, x_coor, y-coor, number);
+
+ input visible, clock, reset;
+ input [11:0] display_col, x_coor;
+ input [10:0] display_row, y_coor;
+ input [3:0] number
+ 
+ output [3:0] char_red, char_green, char_blue;
+ output char_visible;
+ 
+ reg [11:0]  imagex;
+ reg [10:0]  imagey, char_base_y;
+ reg jump, visible_char;
+ reg [30:0] count;
+ reg [3:0] red, green, blue;
+ reg [8:0] speedoffset;
+ reg [12:0]  char_address_Run, char_address_Jump;
+ reg [30:0] counter;
+ reg [3:0] animatie_Run, animatie_Jump;
+ 
+ wire [11:0] mem_out_Run, mem_out_Jump;
+
+
+scoreCounter_Ram scoreCounter_Ram (char_address_Run,clock,12'b0,1'b0,mem_out_Run);
+
+		
+always @(posedge clock or posedge reset) begin
+	if (reset) begin
+		red = 0; green = 0; blue = 0; char_base_y = 0; count = 0; imagex = 0; imagey=0;
+	end else begin
+		char_address_Run = {imagex[6:2],imagey[6:2]} + animatie_Run*1024;
+		char_address_Jump = {imagex[6:2],imagey[6:2]} + animatie_Jump*1024;
+		if (display_col == 0 && display_row == 0 && jump == 1) begin 
+			if (hit == 1) begin
+				count = count;
+			end else begin
+				count = count + 1;
+				if (count == 69) begin jump = 0; count = 0; end	
+			end
+		end
+		
+		if (visible) begin
+			if (jump_key == 1 && jump == 0 && hit == 0) begin jump = 1; end
+			char_base_y = 690 - speedoffset;
+			imagex = display_col - 300;
+			imagey = display_row - char_base_y;
+			if (310 < display_col[11:0] && display_col[11:0] < 429 && (char_base_y+4) < display_row[10:0] && display_row[10:0] < (char_base_y+132)) begin
+				if (jump) begin
+					if (mem_out_Jump != 12'b110000001111) begin
+						red = mem_out_Jump[3:0];
+						green = mem_out_Jump[7:4];
+						blue = mem_out_Jump[11:8];
+						visible_char = 1;
+					end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
+				end else begin
+					if (mem_out_Run != 12'b110000001111) begin
+						red = mem_out_Run[3:0];
+						green = mem_out_Run[7:4];
+						blue = mem_out_Run[11:8];
+						visible_char = 1;
+					end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
+				end
+			end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
+		end
+	end
+end
+	
+ assign char_blue = blue;
+ assign char_red = red;
+ assign char_green = green;
+ assign char_visible = visible_char;
+ 
+
+endmodule

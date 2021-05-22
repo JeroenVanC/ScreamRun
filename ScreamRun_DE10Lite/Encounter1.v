@@ -1,6 +1,6 @@
-module encounter1 (display_col, display_row, reset, visible, clock, enc1_red, enc1_green, enc1_blue, enc1_visible);
+module encounter1 (display_col, display_row, reset, visible, clock, spawn_key, hit, enc1_red, enc1_green, enc1_blue, enc1_visible);
 
- input visible, clock, reset;
+ input visible, clock, reset, spawn_key, hit;
  input [11:0] display_col;
  input [10:0] display_row;
  
@@ -21,33 +21,41 @@ Encounter1_Run Encounter1_Run (char_address_Run,clock,12'b0,1'b0,mem_out_Run);
 
 always @(posedge clock or posedge reset) begin
   if (reset) begin
-        counter <= 0; animatie_Run <= 0;
+        counter = 0; animatie_Run = 0;
   end else begin
-        if (counter == 20000000) begin
-            counter <= 0;
-				animatie_Run <= animatie_Run + 1;
-            if (animatie_Run == 5) begin
-                animatie_Run <= 0;
-            end 
-        end else begin
-            counter <= counter + 1;
-        end
-    end
+		  if (hit == 1) begin 
+				counter = counter;
+				animatie_Run = animatie_Run;
+		  end else if(counter == 20000000) begin
+					counter = 0;
+					animatie_Run = animatie_Run + 1;
+					if (animatie_Run == 5) begin
+						animatie_Run = 0;
+					end 
+				end else begin
+					counter = counter + 1;
+				end
+		  end
 end
 		
 always @(posedge clock or posedge reset) begin
 	if (reset) begin
-		red = 0; green = 0; blue = 0; char_base_y = 0; imagex = 0; imagey=0; char_base_x = 0;
+		red = 0; green = 0; blue = 0; char_base_y = 0; imagex = 0; imagey=0; char_base_x = 0; visible_char = 0;
 	end else begin
 		char_address_Run = {imagex[6:2],imagey[6:2]} + animatie_Run*1024;
-		if (display_col == 0 && display_row == 0) begin
-			if (char_base_x == 0) begin
-				char_base_x = 1500;
-			end else begin
-				char_base_x = char_base_x - 6; //speed
-			end
+		if (hit == 1) begin
+			char_base_x = char_base_x;
+		end else if(display_col == 0 && display_row == 0) begin
+				if (char_base_x == 0) begin
+					if (spawn_key == 1) begin 
+						char_base_x = 1500;
+					end else begin 
+						char_base_x = 0;
+					end
+				end else begin
+					char_base_x = char_base_x - 6; //speed
+				end
 		end
-			
 			
 			
 		if (visible) begin
@@ -59,7 +67,11 @@ always @(posedge clock or posedge reset) begin
 						red = mem_out_Run[3:0];
 						green = mem_out_Run[7:4];
 						blue = mem_out_Run[11:8];
-						visible_char = 1;
+						if (char_base_x == 0) begin
+							visible_char = 0;
+						end else begin
+							visible_char = 1;
+						end
 					end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0;end
 				end
 			end else begin red = 4'b1111; green = 4'b1111; blue = 4'b1111; visible_char = 0; end

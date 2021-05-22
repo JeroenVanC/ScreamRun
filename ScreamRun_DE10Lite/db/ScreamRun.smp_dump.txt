@@ -1,6 +1,6 @@
 
-State Machine - |ScreamRun|main:main|character:char|up
-Name up.00 up.10 up.01 
-up.00 0 0 0 
-up.01 1 0 1 
-up.10 1 1 0 
+State Machine - |ScreamRun|main:main|random_enc_gen:random_enc_gen|enc_counter
+Name enc_counter.0000000000000000000000000000000 enc_counter.0000000000000000000000000000010 enc_counter.0000000000000000000000000000001 
+enc_counter.0000000000000000000000000000000 0 0 0 
+enc_counter.0000000000000000000000000000001 1 0 1 
+enc_counter.0000000000000000000000000000010 1 1 0 

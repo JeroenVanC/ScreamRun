@@ -1,0 +1,18 @@
+module lfsr (input clock, input reset, output [1:0] out);
+
+	reg [15:0]q;
+
+	assign out = q[1:0];
+
+	wire w1,w2,w3;
+
+   assign w1=q[13]^q[15],
+	w2=w1^q[12],
+	w3=w2^q[10];
+
+	always@(posedge clock or posedge reset) begin
+		if(reset) q<=16'b1010110011100001;
+		else q<={w3,q[15:1]};
+	end
+
+endmodule

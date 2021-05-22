@@ -1,15 +1,15 @@
-Analysis & Synthesis Status : Successful - Fri May 07 13:27:26 2021
+Analysis & Synthesis Status : Successful - Sat May 22 10:14:01 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : ScreamRun
 Top-level Entity Name : ScreamRun
 Family : MAX 10
-Total logic elements : 868
-    Total combinational functions : 819
-    Dedicated logic registers : 298
-Total registers : 298
+Total logic elements : 1,659
+    Total combinational functions : 1,518
+    Dedicated logic registers : 644
+Total registers : 644
 Total pins : 149
 Total virtual pins : 0
-Total memory bits : 1,081,344
+Total memory bits : 933,888
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 1
 UFM blocks : 0

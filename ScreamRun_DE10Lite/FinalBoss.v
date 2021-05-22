@@ -1,6 +1,6 @@
-module finalBoss (display_col, display_row, reset, visible, clock, boss_red, boss_green, boss_blue, boss_visible);
+module finalBoss (display_col, display_row, reset, visible, clock, hit, boss_red, boss_green, boss_blue, boss_visible);
 
- input visible, clock, reset;
+ input visible, clock, reset, hit;
  input [11:0] display_col;
  input [10:0] display_row;
  
@@ -27,7 +27,7 @@ always @(posedge clock or posedge reset) begin
 			
 			
 		if (visible) begin
-			char_base_y = 560;
+			char_base_y = 565;
 			char_base_x = 0;
 			imagex = display_col - char_base_x;
 			imagey = display_row - char_base_y;
